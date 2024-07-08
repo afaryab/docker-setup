@@ -1,0 +1,40 @@
+version: "3"
+include:
+    - ./docker/proxy-docker-compose.yml
+    ## INDEX:80,443 PORTAL:81 
+    ## Setup Proxy Server
+
+    # - ./docker/minio-docker-compose.yml
+    ## INDEX:3026 PORTAL:8024 
+
+    - ./docker/mailpit-docker-compose.yml
+    ## INDEX:3025 PORTAL:8025 
+    ## Setup Email Server
+
+    - ./docker/mysql-docker-compose.yml
+    - ./docker/phpmyadmin-docker-compose.yml
+    ## INDEX:3306 PRTAL: 8026
+    ## Setup MySql Enviroment
+
+    # - ./docker/mongo-docker-compose.yml
+    # - ./docker/express-docker-compose.yml
+    ## INDEX:@@@ PRTAL: @@@
+    ## Setup Redis Enviroment
+
+    # - ./docker/redis-docker-compose.yml
+    # - ./docker/redis_insights-docker-compose.yml
+    ## INDEX:27017 PORTAL:8027 
+    ## Setup Mongo DB Enviroment
+
+    # - ./docker/logsniffer-docker-compose.yml
+    ## PORTAL:8028 
+    ## Setup LogSniffer Enviroment
+
+    # - ./docker/node-docker-compose.yml
+    # - ./docker/storybook-docker-compose.yml
+    ## PORTAL:8029 
+    ## Setup Node Processing and Tests Enviroment
+networks:
+    processton:
+        name: processton
+        driver: bridge

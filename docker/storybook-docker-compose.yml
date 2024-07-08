@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+    storybook:
+        build:
+            context: ./images
+            dockerfile: Dockerfile.storybook
+        image: processton/idas_storybook
+        container_name: idas_storybook
+        tty: true
+        ports:
+            - "8029:3000"
+        volumes:
+            - ../apps:/app
+        networks:
+            - processton

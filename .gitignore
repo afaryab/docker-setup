@@ -1,0 +1,3 @@
+certificates/proxy/letsencrypt/*
+data/mysql/db/*
+storage/proxy/*

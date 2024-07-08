@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+    
+    logsniffer:
+        image: therek/logsniffer
+        ports:
+            - 8028:8082
+        volumes:
+            - /var/log:/mnt/log
+            - ../apps/IDaS/storage/logs/:/mnt/log/idas/

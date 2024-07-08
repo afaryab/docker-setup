@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+    redisinsight:
+        image: redislabs/redisinsight:latest
+        container_name: redisinsight
+        ports:
+            - '3029:8038'

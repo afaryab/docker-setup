@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+    node:
+        build:
+            context: ./images
+            dockerfile: Dockerfile.node
+        image: processton/idas_node
+        container_name: idas_node
+        tty: true
+        volumes:
+            - ../apps:/app
+        networks:
+            - processton

@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+    phpmyadmin:
+        image: "phpmyadmin:latest"
+        container_name: phpmyadmin
+        ports:
+            - 8026:80
+        networks:
+            - processton
+        environment:
+            - PMA_ARBITRARY=1
+            - PMA_HOST=mysql
+            - PMA_USER=myadmin
+            - PMA_PASSWORD=myadmin
+        depends_on:
+            - mysql

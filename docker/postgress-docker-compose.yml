@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+    postgres:
+        image: postgres
+        container_name: postgres
+        environment:
+            POSTGRES_USER: sentry
+            POSTGRES_PASSWORD: sentry
+            POSTGRES_DB: sentry
+        volumes:
+            - ../data/postgres/pgdb:/var/lib/postgresql/data
